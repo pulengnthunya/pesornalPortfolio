@@ -2,14 +2,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color:rgb(117,117,165);
+    background-color: rgb(117, 117, 165);
 }
+
 header {
     background-color: #4CAF50;
     color: white;
     text-align: center;
     padding: 1em 0;
 }
+
 nav ul {
     display: flex;
     justify-content: center;
@@ -18,38 +20,52 @@ nav ul {
     padding: 0;
     margin: 0;
 }
+
 nav ul li {
     padding: 14px 20px;
 }
+
 nav ul li a {
     color: white;
     text-decoration: none;
 }
+
 nav ul li a:hover {
     background-color: #6aae3f;
 }
+
 section {
     padding: 20px;
 }
+
 .container {
     display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
     justify-content: space-between;
     align-items: flex-start;
 }
+
 #contactForm {
     display: flex;
     flex-direction: column;
-    max-width: 45%;
+    max-width: 100%; /* Full width on small screens */
 }
-#contactForm label, #contactForm input, #contactForm textarea, #contactForm button {
+
+#contactForm label,
+#contactForm input,
+#contactForm textarea,
+#contactForm button {
     margin-bottom: 15px;
     width: 100%;
 }
-#contactForm input, #contactForm textarea {
+
+#contactForm input,
+#contactForm textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 #contactForm button {
     padding: 10px;
     background-color: #4CAF50;
@@ -58,22 +74,38 @@ section {
     border-radius: 4px;
     cursor: pointer;
 }
+
 #contactForm button:hover {
     background-color: #45a049;
 }
+
 .contacticons {
-    max-width: 45%;
+    max-width: 100%; /* Full width on small screens */
 }
+
 .contacticons .icons {
     display: flex;
     flex-direction: column;
 }
+
 footer {
     background-color: #373737;
     color: rgba(255, 255, 255, 0.956);
     text-align: center;
-    padding: -10px 0;
-    position: fixed;
-    bottom: 10px;
+    padding: 10px 0; /* Changed to positive padding */
+    position: relative; /* Changed to relative for better responsiveness */
+    bottom: 0;
     width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    #contactForm,
+    .contacticons {
+        max-width: 100%; /* Full width */
+    }
 }
